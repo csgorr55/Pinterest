@@ -1,0 +1,119 @@
+BEGIN:VCALENDAR
+PRODID:-//Microsoft Corporation//Outlook 16.0 MIMEDIR//EN
+VERSION:2.0
+METHOD:REQUEST
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:India Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T000000
+TZOFFSETFROM:+0530
+TZOFFSETTO:+0530
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+ATTENDEE;CN=avinash.p@signiwis.com;RSVP=TRUE:mailto:avinash.p@signiwis.com
+ATTENDEE;CN=chaithra.hu@signiwis.com;RSVP=TRUE:mailto:chaithra.hu@signiwis.
+	com
+ATTENDEE;CN=soumya@signiwis.com;RSVP=TRUE:mailto:soumya@signiwis.com
+ATTENDEE;CN=gyanaranjan@signiwis.com;RSVP=TRUE:mailto:gyanaranjan@signiwis.
+	com
+ATTENDEE;CN=shilpa.gupta@signiwis.com;RSVP=TRUE:mailto:shilpa.gupta@signiwi
+	s.com
+ATTENDEE;CN=shivananda.m@signiwis.com;RSVP=TRUE:mailto:shivananda.m@signiwi
+	s.com
+ATTENDEE;CN=sunila.k@signiwis.com;RSVP=TRUE:mailto:sunila.k@signiwis.com
+ATTENDEE;CN="'Anusha Kulkarni'";RSVP=TRUE:mailto:anusha.kulkarni@signiwis.c
+	om
+ATTENDEE;CN=shiva@signiwis.com;RSVP=TRUE:mailto:shiva@signiwis.com
+ATTENDEE;CN=vandana@signiwis.com;RSVP=TRUE:mailto:vandana@signiwis.com
+ATTENDEE;CN=bharateshharanal@signiwis.com;RSVP=TRUE:mailto:bharateshharanal
+	@signiwis.com
+ATTENDEE;CN=suraj.mishra@signiwis.com;RSVP=TRUE:mailto:suraj.mishra@signiwi
+	s.com
+ATTENDEE;CN="Vijay H D";RSVP=TRUE:mailto:vijayakumara.hd@signiwis.com
+ATTENDEE;CN=rajashreesahoo@signiwis.com;RSVP=TRUE:mailto:rajashreesahoo@sig
+	niwis.com
+ATTENDEE;CN=naveen.ha@signiwis.com;RSVP=TRUE:mailto:naveen.ha@signiwis.com
+ATTENDEE;CN=naveen.p@signiwis.com;RSVP=TRUE:mailto:naveen.p@signiwis.com
+ATTENDEE;CN=pradeep.yadav@signiwis.com;RSVP=TRUE:mailto:pradeep.yadav@signi
+	wis.com
+ATTENDEE;CN=prashant.hiremath@signiwis.com;RSVP=TRUE:mailto:prashant.hirema
+	th@signiwis.com
+ATTENDEE;CN=rajesh@signiwis.com;RSVP=TRUE:mailto:rajesh@signiwis.com
+ATTENDEE;CN=suryaprabha@signiwis.com;RSVP=TRUE:mailto:suryaprabha@signiwis.
+	com
+CLASS:PUBLIC
+CREATED:20180709T100004Z
+DESCRIPTION:Hi All\,\n\nThis is to inform that the General meeting has been
+	 arranged at 4:30PM today.\n\nHere by\, all are informed to attend the mee
+	ting on time without fail.\n\nRegards\,\n\nEvangeline S\n\nAccounts Execut
+	ive\n\n \n\n
+DTEND;TZID="India Standard Time":20180709T170000
+DTSTAMP:20180709T100004Z
+DTSTART;TZID="India Standard Time":20180709T163000
+LAST-MODIFIED:20180709T100004Z
+LOCATION:Session Hall
+ORGANIZER;CN=evangeline@signiwis.com:mailto:evangeline@signiwis.com
+PRIORITY:5
+SEQUENCE:0
+SUMMARY;LANGUAGE=en-us:General Meeting
+TRANSP:OPAQUE
+UID:040000008200E00074C5B7101A82E00800000000207146889917D401000000000000000
+	0100000002C4C0C9298EE754AB085A22774F2B6E8
+X-ALT-DESC;FMTTYPE=text/html:<html xmlns:v="urn:schemas-microsoft-com:vml" 
+	xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-mic
+	rosoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/
+	12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head><META HTTP-EQUIV="C
+	ontent-Type" CONTENT="text/html\; charset=us-ascii"><meta name=Generator c
+	ontent="Microsoft Word 15 (filtered medium)"><style><!--\n/* Font Definiti
+	ons */\n@font-face\n	{font-family:"Cambria Math"\;\n	panose-1:2 4 5 3 5 4 
+	6 3 2 4\;}\n@font-face\n	{font-family:Calibri\;\n	panose-1:2 15 5 2 2 2 4 
+	3 2 4\;}\n@font-face\n	{font-family:Verdana\;\n	panose-1:2 11 6 4 3 5 4 4 
+	2 4\;}\n/* Style Definitions */\np.MsoNormal\, li.MsoNormal\, div.MsoNorma
+	l\n	{margin:0in\;\n	margin-bottom:.0001pt\;\n	font-size:12.0pt\;\n	font-fa
+	mily:"Times New Roman"\,serif\;}\na:link\, span.MsoHyperlink\n	{mso-style-
+	priority:99\;\n	color:#0563C1\;\n	text-decoration:underline\;}\na:visited\
+	, span.MsoHyperlinkFollowed\n	{mso-style-priority:99\;\n	color:#954F72\;\n
+		text-decoration:underline\;}\np\n	{mso-style-priority:99\;\n	mso-margin-t
+	op-alt:auto\;\n	margin-right:0in\;\n	mso-margin-bottom-alt:auto\;\n	margin
+	-left:0in\;\n	font-size:12.0pt\;\n	font-family:"Times New Roman"\,serif\;}
+	\np.msonormal0\, li.msonormal0\, div.msonormal0\n	{mso-style-name:msonorma
+	l\;\n	mso-style-priority:99\;\n	mso-margin-top-alt:auto\;\n	margin-right:0
+	in\;\n	mso-margin-bottom-alt:auto\;\n	margin-left:0in\;\n	font-size:12.0pt
+	\;\n	font-family:"Times New Roman"\,serif\;}\nspan.EmailStyle19\n	{mso-sty
+	le-type:personal-reply\;\n	font-family:"Calibri"\,sans-serif\;\n	color:#1F
+	497D\;}\n.MsoChpDefault\n	{mso-style-type:export-only\;\n	font-size:10.0pt
+	\;}\n@page WordSection1\n	{size:8.5in 11.0in\;\n	margin:1.0in 1.0in 1.0in 
+	1.0in\;}\ndiv.WordSection1\n	{page:WordSection1\;}\n--></style><!--[if gte
+	 mso 9]><xml>\n<o:shapedefaults v:ext="edit" spidmax="1026" />\n</xml><![e
+	ndif]--><!--[if gte mso 9]><xml>\n<o:shapelayout v:ext="edit">\n<o:idmap v
+	:ext="edit" data="1" />\n</o:shapelayout></xml><![endif]--></head><body la
+	ng=EN-US link="#0563C1" vlink="#954F72"><div class=WordSection1><p><span s
+	tyle='font-size:10.0pt\;font-family:"Verdana"\,sans-serif\;color:#1F497D'>
+	Hi All\,<o:p></o:p></span></p><p><span style='font-size:11.0pt\;font-famil
+	y:"Calibri"\,sans-serif\;color:#1F497D'>This is to inform that the General
+	 meeting has been arranged at 4:30PM today.<o:p></o:p></span></p><p><span 
+	style='font-size:11.0pt\;font-family:"Calibri"\,sans-serif\;color:#1F497D'
+	>Here by\, all are informed to attend the meeting on time without fail.<o:
+	p></o:p></span></p><p><span style='font-size:11.0pt\;font-family:"Calibri"
+	\,sans-serif\;color:#1F497D'>Regards\,<o:p></o:p></span></p><p><span style
+	='font-size:11.0pt\;font-family:"Calibri"\,sans-serif\;color:#1F497D'>Evan
+	geline S<o:p></o:p></span></p><p><span style='font-size:11.0pt\;font-famil
+	y:"Calibri"\,sans-serif\;color:#1F497D'>Accounts Executive<o:p></o:p></spa
+	n></p><p><span style='font-size:11.0pt\;font-family:"Calibri"\,sans-serif\
+	;color:#1F497D'><o:p>&nbsp\;</o:p></span></p></div></body></html>
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MS-OLK-AUTOSTARTCHECK:FALSE
+X-MS-OLK-CONFTYPE:0
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+

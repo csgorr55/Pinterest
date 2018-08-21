@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+   * 
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html
+    {
+        font-size: 10px;
+    }
+    body
+    {
+       /* background: linear-gradient(to top right, rgb(58, 5, 248) , rgb(128, 119, 255));*/
+       font-family: Arial, Helvetica, sans-serif;
+       background-color: #f1f1f1;
+        background-size: cover;
+    }
+    .loginContainer
+    {
+        
+        border: 2px solid black;
+    background-color: black;
+    position: relative;
+    margin-left: 44rem;
+    margin-right: 44rem;
+    margin-bottom: 10rem;
+    margin-top: 10rem;
+    padding: 4rem;
+    width:35%;
+        
+    }
+    .inputContainer
+    {
+        font-size: 1.8rem;
+        display: block;
+        text-align: left;
+        padding: 1.3rem;
+    }
+    .username
+    {
+        color:#f1f1f1;
+        font-weight: 600;
+       
+    }
+   .count
+    {
+        color:#f1f1f1;
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+
+    .input
+    {
+        text-decoration: none;
+        background-color: #f1f1f1;  
+        padding: 1.7rem;
+        width: 36rem;
+        border: none;
+        background: #f1f1f1;
+
+    } 
+    input[type=text], input[type=password], input[type=Date], input[type=tel], input[type=email]
+    {
+        padding: .7rem;
+        width: 36rem;
+        border: none;
+        background: #f1f1f1;
+    }
+    input[type=text]:focus, input[type=password]:focus, input[type=Date]:focus, input[type=tel]:focus, input[type=email]:focus
+    {
+        text-decoration: none;
+        background-color: #ddd; 
+        padding: .7rem; 
+        width: 36rem;
+    }
+    .input:focus
+    {
+        text-decoration: none;
+        background-color: #ddd; 
+        padding: 1.7rem; 
+        width: 36rem;
+
+    }
+    .button {
+    background-color: #BD081C;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 36rem;
+}
+.mandate
+{
+    color: red;
+}
+
+.error
+{
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="button"]:disabled {
+    background: #dddddd;
+}
+
+.heading
+{
+  
+    display: inline-block;
+    text-align: center;
+
+}
+h2
+{text-align: center;
+    color: #dddddd;
+    font-size: 5rem;
+    font-weight: 700;
+    }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    padding-bottom: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content, {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 37%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 30%;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body
+{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 37%;
+    font-size: 1.4rem;
+}
+.buttonpop {
+    background-color: #BD081C;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    margin-left: 31.4%;
+    width: 37.2%;
+    cursor:pointer;
+}
+
+.abutton {
+    background-color: #BD081C;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 36rem;
+}
+a
+{
+    text-decoration: none;
+    color: white;
+}
+</style>
+
+</head> 
+<body>
+       
+<div class="loginContainer">
+<form id="frm2" action="#">
+        <h2 class"heading">Login</h2>
+       
+        <div class="inputContainer">
+            <label class="username">UserName <span class="mandate">* </span></label>
+            <br>
+            <input type="email" class="input" id="firstnameid" onkeyup="emailValidation()" placeholder="Enter UserID"><p class="error" id="emailval"></p>
+        </div>
+
+<div class="inputContainer">
+<label class="username">Password <span class="mandate">* </span> </label>
+<br>
+<input type="password"  id="passwordid" onkeyup="checkPassword()" placeholder="Enter Password"><p class="error" id="passwordval"></p>
+</div>
+
+
+<div class="inputContainer">
+<input type="button" class="button" value="Login" id="loginButton"  onclick="userCheck()">
+</div>
+
+<div class="inputContainer">
+    <a href="registrationPage.html"><button type="button" class="button"  id="registerbtn">Go to sign up</button></a>  <p class="error" style="text-align: center" id="loginval"></p>
+    </div>
+   
+</form>
+
+</div>
+
+
+<div id="displayModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+    </div>
+
+                <div class="modal-body">
+                    <p id="modelUserName"></p>
+            </div>
+            <div class="modal-body">
+                    <p id="modelDOB"></p>
+            </div>
+            <div class="modal-body">
+                    <p id="modelmobileNumber"></p>
+            </div>
+            <div class="modal-body">
+                <p id="modelEmail"></p>
+        </div>
+                <button type="button" class="buttonpop"  onclick="clearForm()">Confirm</button>
+            
+            </div>
+  
+  </div>
+
+
+
+
+<script>
+
+    /* refrence variables of all input field */
+var firstname = document.getElementById("firstnameid");
+var password = document.getElementById("passwordid");
+
+
+var userloginCheck = false;
+
+
+
+
+        //Email validation
+/*
+function emailValidation()
+{
+    document.getElementById('emailval').innerText = "";
+    var re = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if(!(re.test(firstname.value)))
+    {
+        document.getElementById('emailval').innerText = "Invalid user ID";
+    }
+    else
+    {
+        document.getElementById('emailval').innerText = "";
+        emailB = true;
+        return true;
+    }
+
+}
+
+
+
+
+// password validation
+
+function checkPassword()
+{
+    
+    document.getElementById('passwordval').innerText = "";
+    var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    if(!(re.test(password.value)))
+    {
+        document.getElementById('passwordval').innerText = "Password you have entered is not valid";
+        return false;
+    }
+    else
+    {
+        document.getElementById('passwordval').innerText = "";
+        passwordB = true;
+        return true;
+    }
+    
+}
+*/
+//userCheck
+
+function userCheck()
+{
+    document.getElementById('emailval').innerHTML ="";
+    document.getElementById('passwordval').innerText = "";
+    var usernamedata =  JSON.parse(localStorage.getItem("usernamedata"));
+    var pw = JSON.parse(localStorage.getItem("pw"));
+    if(firstname.value == '' )
+    {
+        document.getElementById('emailval').innerHTML ="Fill all mandatory fields " ;
+        firstname.focus();
+        return false;
+    }
+    else if (password.value == '')
+    {
+        document.getElementById('passwordval').innerHTML ="Fill all mandatory fields " ;
+        password.focus();
+        return false;
+    }
+    for (i=1 ; i<=localStorage.clickcount; i++ )
+    {
+       if( usernamedata[i] == firstname.value && pw[i] == password.value )
+       {
+        userloginCheck = true;
+       }
+
+       
+    }
+    if(userloginCheck)
+    {
+        document.write("Succesfully logged in");
+    }
+    else
+    {
+    
+     document.getElementById('loginval').innerText = "User doesnot exist";
+    // rgsbtn.focus();
+
+    }
+
+}
+
+
+    
+        </script>
+</body>
+
+</html>

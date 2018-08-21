@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+
+ * 
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html
+    {
+        font-size: 10px;
+    }
+    body
+    {
+       /* background: linear-gradient(to top right, rgb(58, 5, 248) , rgb(128, 119, 255));*/
+       font-family: Arial, Helvetica, sans-serif;
+       background-color: #FFFFFF;
+        background-size: cover;
+    }
+
+.header {
+  padding: 0;
+  background: #FFFFFF;
+  color: #555555;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border : 2px solid black;
+  z-index: 2;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #555555;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+li a:hover {
+    background-color: #F0F0F0;
+}
+
+.float-right
+{
+    float: right;
+}
+
+.content
+{
+    margin-top: 3.696%;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    z-index: -1;
+   /* border: 2px solid blueviolet;*/
+}
+
+.imagePinterest {
+    width: 24.77%;
+    height: 24.77%;
+    object-fit: cover;
+    border-radius: 24px;
+    padding: 12px;
+    z-index: 1;
+}
+.imagecontainer
+{
+    position: relative;
+    display: inline;
+    z-index: 1;
+}
+
+.dropcontent {
+    border: 2px solid green;
+    display: none;
+    position: absolute;
+    right: -0.12%;
+    top: 92%;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropcontent a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    z-index: 2;
+}
+
+.dropcontent a:hover
+{
+    background-color: #F0F0F0;
+}
+
+.show {
+    display: block;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    padding-bottom: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content, {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 37%;
+}
+
+/* The Close Button */
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 30%;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body
+{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 37%;
+    font-size: 1.4rem;
+}
+.buttonpop {
+    background-color: #BD081C;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    margin-left: 31.4%;
+    width: 37.2%;
+    cursor:pointer;
+    color: #FFFFFF;
+}
+
+.textdply
+{
+    color: #555555;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+#pic
+{
+    display: inline;
+}
+
+
+.imgovercontent {
+  opacity: 0;
+  position: absolute;
+  top: 36%;
+  left: 36%;
+  text-align: center;
+}
+
+.discription {
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+.par
+{
+    position: relative;
+  top: 0%;
+  left: 0%;
+    color: #BD081C;
+}
+.btn
+{
+    background-color: #BD081C;
+}
+.imagecontainer:hover .imagePinterest {
+  opacity: 0.3;
+}
+
+.imagecontainer:hover .imgovercontent {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<div class="header" id="myHeader">
+  <ul>
+    <li ><a href="#icon">Icon</a></li>
+    <li class="float-right" ><a href="#popup" id="drop" onclick="droplist()" class="glyphicon glyphicon-th-list">
+          </a></li>
+          <div class="dropcontent" id="myDropdown">
+                <a href="#" id="addimg">Add Image</a>
+                <a href="#">Log out</a>
+              </div>
+    <li class="float-right"><a href="#username">Username</a></li>
+  </ul>
+</div>
+
+<div class="content">
+    <div class="imagecontainer">
+            <img src="img1.jpg" alt="img" class="imagePinterest">
+            <div class="imgovercontent">
+                    <div class="discription">
+                        <p class="par">Emma Roberts</p>
+                        <button class="btn" onclick="toDelete(this)">Delete</button>
+                    </div>
+            </div>
+    </div>
+
+ </div>
+
+ <div id="displayModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+    </div>
+
+                <div class="modal-body">
+                    <span class="textdply">Add image : </span>   <input type="file" id="pic" accept="image/*" onchange="readURL(this)"> 
+            </div>
+            <div class="modal-body">
+                <span class="textdply">Description : </span>   <input type="text" id="dis" placeholder="Enter the discription"> 
+            </div>
+           
+            
+                <button type="button" class="buttonpop"  onclick="imgUpload()">Upload</button>
+            
+ </div>
+  
+  
+
+<script>
+//load image in homepage
+loadImage();
+
+
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function droplist() 
+{
+     document.getElementById("myDropdown").classList.toggle("show");
+    if (myDropdown.classList.contains('show'))
+    {
+        document.getElementById("drop").style.background = "#F0F0F0";
+    }
+    else
+    {
+        document.getElementById("drop").style.background = "#FFFFFF";
+    }
+}
+
+
+
+  
+// Get the modal
+var modal = document.getElementById('displayModal');
+
+
+// Get the anchor that opens the modal
+var img = document.getElementById("addimg");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the anchor, open the modal 
+img.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event)
+ {
+    if (event.target == modal) 
+    {
+        modal.style.display = "none";
+    }
+
+
+    if (!event.target.matches('#drop')) 
+  {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show'))
+       {
+        myDropdown.classList.remove('show');
+        document.getElementById("drop").style.background = "#FFFFFF";
+       
+      }
+  }
+}
+
+
+//readURL
+var srcURL;
+
+function readURL(input)
+{
+    var img = document.getElementById("pic").value;
+
+    if(!(img == ''))
+    {
+        srcURL = document.getElementById("pic").files[0].name;
+    }
+    console.log(img);
+    console.log(srcURL);
+    console.log(document.getElementById("pic").files[0].name);
+}
+
+//img upload
+function imgUpload(input)
+{
+    
+    var img = document.getElementById("pic").value;
+    var dis = document.getElementById("dis").value;
+    /*
+    if(!(img == '' && dis == ''))
+    {
+        var pic = document.createElement("IMG");
+        pic.setAttribute("src",srcURL);
+        pic.setAttribute("class","imagePinterest");
+        pic.setAttribute("alt","img");
+        document.getElementsByClassName("content")[0].appendChild(pic);
+        var hovercontent = document.getElementsByClassName("content")[imgovercontent];
+        modal.style.display = "none";
+       document.getElementById("pic").value = "";
+  document.getElementById("dis").value = "";
+    }
+*/
+     if(!(img == '' && dis == ''))
+    {
+       addImageToLocal(srcURL,dis);
+        var mcnt = document.getElementsByClassName("content")[0];
+        var dive1 = document.createElement("div");
+        dive1.setAttribute("class","imagecontainer");
+       // mcnt.appendChild(dive1);
+        mcnt.insertBefore(dive1, mcnt.firstChild);
+
+        var pic = document.createElement("IMG");
+        pic.setAttribute("src",srcURL);
+        pic.setAttribute("class","imagePinterest");
+        pic.setAttribute("alt","img");
+        document.getElementsByClassName("imagecontainer")[0].appendChild(pic);
+
+        var dive2 = document.createElement("div");
+        dive2.setAttribute("class","imgovercontent");
+        document.getElementsByClassName("imagecontainer")[0].appendChild(dive2);
+
+        var dive3 = document.createElement("div");
+        dive3.setAttribute("class","discription");
+        document.getElementsByClassName("imgovercontent")[0].appendChild(dive3);
+
+        var para = document.createElement("p");
+        var node = document.createTextNode(dis);
+         para.appendChild(node);
+         para.setAttribute("class","par");
+         document.getElementsByClassName("discription")[0].appendChild(para);
+
+         var button = document.createElement("BUTTON");
+         button.setAttribute("class","btn");
+         button.innerHTML = "Delete";
+         button.onclick = function() {toDelete(this)};
+          document.getElementsByClassName("discription")[0].appendChild(button);
+
+       
+        modal.style.display = "none";
+       document.getElementById("pic").value = "";
+  document.getElementById("dis").value = "";
+    }
+}
+
+//to delete element
+
+function toDelete(element)
+{
+    
+  var elem = element.parentNode.parentNode.parentNode;
+
+  elem.parentNode.removeChild(elem);
+    return false;
+  
+
+}
+
+//image storing in local storage
+// Constructor function for Image objects
+function Image(url, descritpion) {
+    this.url = url;
+    this.descritpion = descritpion;
+}
+
+
+//add image to local storage
+
+function addImageToLocal(url,descritpion)
+{
+    if (localStorage.arrimg === undefined)
+    {
+        var arrimg=[];
+        var imaging = {url : url , descritpion : descritpion };
+        arrimg[0]=imaging;
+        localStorage.setItem("arrimg",JSON.stringify(arrimg));
+    }
+    else
+    {
+
+
+            var imaging = {url:url, descritpion:descritpion};
+            var i = JSON.parse(localStorage.getItem("arrimg")).length;
+            console.log(i);
+            var ob = JSON.parse(localStorage.getItem("arrimg"));
+            ob[i] = imaging;
+            console.log(ob);
+            localStorage.setItem("arrimg",JSON.stringify(ob));
+
+
+    }
+}
+
+
+//to load image
+function loadImage()
+{
+    // Get the modal
+var modal = document.getElementById('displayModal');
+var ob = JSON.parse(localStorage.getItem("arrimg"));
+    if (!(ob === undefined || ob == null))
+    {
+        
+      for(i = 0 ; i < ob.length  ; i++)
+        {
+            var obj =ob[i];
+                var img = obj.url;
+                var dis = obj.descritpion;
+                var mcnt = document.getElementsByClassName("content")[0];
+        var dive1 = document.createElement("div");
+        dive1.setAttribute("class","imagecontainer");
+       // mcnt.appendChild(dive1);
+        mcnt.insertBefore(dive1, mcnt.firstChild);
+
+        var pic = document.createElement("IMG");
+        pic.setAttribute("src",img);
+        pic.setAttribute("class","imagePinterest");
+        pic.setAttribute("alt","img");
+        document.getElementsByClassName("imagecontainer")[0].appendChild(pic);
+
+        var dive2 = document.createElement("div");
+        dive2.setAttribute("class","imgovercontent");
+        document.getElementsByClassName("imagecontainer")[0].appendChild(dive2);
+
+        var dive3 = document.createElement("div");
+        dive3.setAttribute("class","discription");
+        document.getElementsByClassName("imgovercontent")[0].appendChild(dive3);
+
+        var para = document.createElement("p");
+        var node = document.createTextNode(dis);
+         para.appendChild(node);
+         para.setAttribute("class","par");
+         document.getElementsByClassName("discription")[0].appendChild(para);
+
+         var button = document.createElement("BUTTON");
+         button.setAttribute("class","btn");
+         button.innerHTML = "Delete";
+         button.onclick = function() {toDelete(this)};
+          document.getElementsByClassName("discription")[0].appendChild(button);
+        modal.style.display = "none";
+       document.getElementById("pic").value = "";
+         document.getElementById("dis").value = "";
+        }
+    }
+}
+</script>
+
+</body>
+</html>

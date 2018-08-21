@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html
+    {
+        font-size: 10px;
+    }
+    body
+    {
+       /* background: linear-gradient(to top right, rgb(58, 5, 248) , rgb(128, 119, 255));*/
+       font-family: Arial, Helvetica, sans-serif;
+       background-color: #f1f1f1;
+        background-size: cover;
+    }
+    .loginContainer
+    {
+        
+        border: 2px solid black;
+    background-color: black;
+    position: relative;
+    margin-left: 44rem;
+    margin-right: 44rem;
+    margin-bottom: 10rem;
+    margin-top: 10rem;
+    padding: 4rem;
+    width:35%;
+        
+    }
+    .inputContainer
+    {
+        font-size: 1.8rem;
+        display: block;
+        text-align: left;
+        padding: 1.3rem;
+    }
+    .username
+    {
+        color:#f1f1f1;
+        font-weight: 600;
+       
+    }
+   .count
+    {
+        color:#f1f1f1;
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+
+    .input
+    {
+        text-decoration: none;
+        background-color: #f1f1f1;  
+        padding: 1.7rem;
+        width: 36rem;
+        border: none;
+        background: #f1f1f1;
+
+    } 
+    input[type=text], input[type=password], input[type=Date], input[type=tel], input[type=email]
+    {
+        padding: .7rem;
+        width: 36rem;
+        border: none;
+        background: #f1f1f1;
+    }
+    input[type=text]:focus, input[type=password]:focus, input[type=Date]:focus, input[type=tel]:focus, input[type=email]:focus
+    {
+        text-decoration: none;
+        background-color: #ddd; 
+        padding: .7rem; 
+        width: 36rem;
+    }
+    .input:focus
+    {
+        text-decoration: none;
+        background-color: #ddd; 
+        padding: 1.7rem; 
+        width: 36rem;
+
+    }
+    .button {
+    background-color: #BD081C;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 36rem;
+}
+.mandate
+{
+    color: red;
+}
+
+.error
+{
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="button"]:disabled {
+    background: #dddddd;
+}
+
+.heading
+{
+  
+    display: inline-block;
+    text-align: center;
+
+}
+h2
+{text-align: center;
+    color: #dddddd;
+    font-size: 5rem;
+    font-weight: 700;
+    }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    padding-bottom: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content, {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 37%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 30%;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body
+{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 37%;
+    font-size: 1.4rem;
+}
+.buttonpop {
+    background-color: #BD081C;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    margin-left: 31.4%;
+    width: 37.2%;
+    cursor:pointer;
+}
+
+.abutton {
+    background-color: #BD081C;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 36rem;
+}
+
+a
+{
+    text-decoration: none;
+    color: white;
+}
+</style>
+
+</head> 
+<body>
+       
+<div class="loginContainer">
+<form id="frm2" action="#">
+        <h2 class"heading">Sign up</h2>
+    <div class="inputContainer">
+           
+<label class="username" >FirstName <span class="mandate">* </span></label> 
+<br>
+<input type="text" class = "input" id="firstnameid"  onkeyup="usernameValidation()" placeholder="Enter FirstName" > <p class="error" id="usernameval"></p>
+</div>
+
+<div class="inputContainer">
+           
+    <label class="username" >LastName <span class="mandate">* </span></label> 
+    <br>
+    <input type="text" class = "input" id="lastnameid"  onkeyup="usernameValidation2()" placeholder="Enter LastName" > <p class="error" id="usernameval2"></p>
+    </div>
+<div class="inputContainer">
+<label class="username">Password <span class="mandate">* </span> </label>
+<br>
+<input type="password"  id="passwordid" onkeyup="checkPassword()" placeholder="Enter Password"><p class="error" id="passwordval"></p>
+</div>
+<div class="inputContainer">
+    <label class="username">Confirm Password  <span class="mandate">* </span></label>
+    <br>
+    <input type="password"  id="cpasswordid" onkeyup="checkConfirmPassword()" placeholder="Re-Enter Password"><p class="error" id="cpasswordval"></p>
+</div>
+<div class="inputContainer">
+    <label class="username">Date of birth  </label>
+    <br>
+    <input type="Date"  id="dateid" onchange="dobValidation()"><p class="error" id="dobval"></p>
+</div>
+<div class="inputContainer">
+    <label class="username">Mobile Number  </label>
+    <br>
+    <input type="tel"  id="telnumberid" onkeyup="telValidation()" placeholder="Enter PhoneNumber"><p class="error" id="mobnumval"></p>
+</div>
+<div class="inputContainer">
+    <label class="username">Gender  </label>
+    <br>
+    
+       <input type="radio" name="gender" value="male" checked> <label class="username">Male</label>
+        <input type="radio" name="gender" value="female"><label class="username">Female</label>
+</div>
+<div class="inputContainer">
+    <label class="username">Email </label>
+    <br>
+    <input type="email" class="input" id="emailid" onkeyup="emailValidation()" placeholder="Enter Email Id"><p class="error" id="emailval"></p>
+</div>
+<div class="inputContainer">
+    <label class="username">Address </label>
+    <br>
+    <textarea  id="addressid"  class="input" onkeyup="addressCount()" maxlength="150" placeholder="Enter Address" ></textarea>
+    <p class="error" id="addressval"></p>
+    <h6 id = "addcount" class="count">0/150</h6>
+</div>
+
+
+<div class="inputContainer">
+    <input type="checkbox" name="terms" id="terms" onchange="enableRegister(this)"><label class="username" > I Agree Terms & Coditions</label> 
+</div>
+<div class="inputContainer">
+<input type="button" class="button" value="Register" id="regButton"  disabled>
+</div>
+<div class="inputContainer">
+    <input type="reset" class="button" value="Reset" >
+    </div>
+    <div class="inputContainer">
+        <a href="loginPage.html"><button type="button" class="button"  >Go to Login</button></a>
+        </div>
+</div>
+
+</div>
+   
+</form>
+
+</div>
+
+
+<div id="displayModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+    </div>
+
+                <div class="modal-body">
+                    <p id="modelUserName"></p>
+            </div>
+            <div class="modal-body">
+                    <p id="modelDOB"></p>
+            </div>
+            <div class="modal-body">
+                    <p id="modelmobileNumber"></p>
+            </div>
+            <div class="modal-body">
+                <p id="modelEmail"></p>
+        </div>
+                <button type="button" class="buttonpop"  onclick="clearForm()">Confirm</button>
+            
+            </div>
+  
+  </div>
+
+
+
+
+<script>
+
+    /* refrence variables of all input field */
+var firstname = document.getElementById("firstnameid");
+var lastname = document.getElementById("lastnameid");
+var password = document.getElementById("passwordid");
+var cpassword = document.getElementById("cpasswordid");
+var dob = document.getElementById("dateid");
+var telnumber = document.getElementById("telnumberid");
+var email = document.getElementById("emailid");
+var address = document.getElementById("addressid");
+var city = document.getElementById("city");
+
+var usernameB = false;
+var usernameB2 = false;
+var passwordB = false;
+var cpasswordB = false;
+var dobB = false;
+var telnumberB = false; 
+var emailB = false;
+var addressB = false;
+var cityB = false;
+
+
+        
+/* to enable and disable rigister button based on Terms and condition */   
+        function enableRegister(element)
+        {
+            if(firstname.value.length == 0 || usernameB == false)
+            {
+                document.getElementById("terms").checked = false;
+                document.getElementById("usernameval").innerHTML = "Fill all mandatory fields ";
+                firstname.focus();
+                return flase;
+            }
+            if(lastname.value.length == 0 || usernameB2 == false)
+            {
+                document.getElementById("terms").checked = false;
+                document.getElementById("usernameval2").innerHTML = "Fill all mandatory fields ";
+                lastname.focus();
+                return flase;
+            }
+            else if (password.value.length == 0 || passwordB == false)
+            {
+                document.getElementById("terms").checked = false;
+                document.getElementById("passwordval").innerHTML = "Fill all mandatory fields ";
+                password.focus();
+                return flase;
+            }
+            else if (cpassword.value.length == 0 || cpasswordB == false)
+            {
+                document.getElementById("terms").checked = false;
+                document.getElementById("cpasswordval").innerHTML = "Fill all mandatory fields ";
+                cpassword.focus();
+                return flase;
+            }
+            else if (dob.value.length == 0 || dobB == false)
+            {
+                document.getElementById("terms").checked = false;
+                document.getElementById("dobval").innerHTML = "Fill all mandatory fields ";
+                dob.focus();
+                return flase;
+            }
+            else if (telnumber.value.length == 0 || telnumberB == false)
+            {
+                document.getElementById("terms").checked = false;
+                document.getElementById("mobnumval").innerHTML = "Fill all mandatory fields ";
+                telnumber.focus();
+                return flase;
+            }
+            else if (email.value.length == 0 || emailB == false)
+            {
+                document.getElementById("terms").checked = false;
+                document.getElementById("emailval").innerHTML = "Fill all mandatory fields ";
+                email.focus();
+                return false;
+            }
+            else if (address.value.length == 0)
+            {
+                document.getElementById("terms").checked = false;
+                document.getElementById("addressval").innerHTML = "Fill all mandatory fields ";
+                address.focus();
+                return flase;
+            }
+           
+            else if(element.checked)
+            {
+                document.getElementById("terms").checked = true;
+                document.getElementById("regButton").disabled = false;
+            }
+            else
+            {
+                document.getElementById("regButton").disabled = true;
+            }
+            
+        }
+
+
+
+
+// to register check
+/*
+function register()
+
+{
+    if(username.value.length == 0)
+    {
+        username.focus();
+        return flase;
+    }
+    else if (password.value.length == 0)
+    {
+        password.focus();
+        return flase;
+    }
+    else if (cpassword.value.length == 0)
+    {
+        cpassword.focus();
+        return flase;
+    }
+    else if (dob.value.length == 0)
+    {
+        dob.focus();
+        return flase;
+    }
+    else if (telnumber.value.length == 0)
+    {
+        telnumber.focus();
+        return flase;
+    }
+    else if (email.value.length == 0)
+    {
+        email.focus();
+        return flase;
+    }
+    else if (address.value.length == 0)
+    {
+        address.focus();
+        return flase;
+    }
+    else if (city.value.length == 0)
+    {
+        city.focus();
+        return flase;
+    }
+    else
+    {
+        return true;
+    }
+}
+/*
+
+/* username validation */
+function usernameValidation()
+{
+    document.getElementById('usernameval').innerText = "";
+    var userStr = firstname.value;
+    var re = /^[a-zA-Z/ ]+$/;
+    //check for empty 
+        if(firstname.value.length == 0)
+        {
+        document.getElementById('usernameval').innerText = "Fill all mandatory fields";
+        firstname.focus();
+        return false;
+        }
+    //check for space
+   
+   else if(userStr.charAt(0) == " ") 
+    {
+        document.getElementById('usernameval').innerText = "First char can't be space";
+        return false;
+    } 
+    //check for only character
+    
+    else  if(!(firstname.value.match(re)))
+            {
+                document.getElementById('usernameval').innerText = "should contains only alphabets";
+             return false;
+            }
+     //check for max and min length    
+      else  if(!((firstname.value.length >= 8) && (firstname.value.length <= 12)))
+        {
+            document.getElementById('usernameval').innerText = "Max 8 and 12 char ";
+            return false;
+        }
+      
+            else
+            {
+                document.getElementById('usernameval').innerText = "";
+                document.getElementById('modelUserName').innerText ="User Name : " +  firstname.value;
+                usernameB = true ;
+                return true;
+                
+                
+            }
+
+}
+
+function usernameValidation2()
+{
+    
+    document.getElementById('usernameval2').innerText = "";
+    var userStr = lastname.value;
+    var re = /^[a-zA-Z/ ]+$/;
+    //check for empty 
+        if(lastname.value.length == 0)
+        {
+        document.getElementById('usernameval2').innerText = "Fill all mandatory fields";
+        lastname.focus();
+        return false;
+        }
+    //check for space
+   
+   else if(userStr.charAt(0) == " ") 
+    {
+        document.getElementById('usernameval2').innerText = "First char can't be space";
+        return false;
+    } 
+    //check for only character
+    
+    else  if(!(lastname.value.match(re)))
+            {
+                document.getElementById('usernameval2').innerText = "should contains only alphabets";
+             return false;
+            }
+     //check for max and min length    
+      else  if(!((lastname.value.length >= 8) && (lastname.value.length <= 12)))
+        {
+            document.getElementById('usernameval2').innerText = "Max 8 and 12 char ";
+            return false;
+        }
+      
+            else
+            {
+                document.getElementById('usernameval2').innerText = "";
+                usernameB2 = true ;
+                return true;
+                
+                
+            }
+
+}
+
+// password validation
+
+function checkPassword()
+{
+    
+    document.getElementById('passwordval').innerText = "";
+    var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    if(!(re.test(password.value)))
+    {
+        document.getElementById('passwordval').innerText = "Password you have entered is not valid";
+        return false;
+    }
+    else
+    {
+        document.getElementById('passwordval').innerText = "";
+        passwordB = true;
+        return true;
+    }
+    
+}
+
+// Confirm password validation
+
+function checkConfirmPassword()
+{
+    document.getElementById('cpasswordval').innerText = "";
+    if(!(password.value == cpassword.value))
+    {
+        document.getElementById('cpasswordval').innerText = "password not matching";
+    }
+    else
+    {
+        cpasswordB = true;
+        document.getElementById('cpasswordval').innerText = "";
+    }
+}
+
+//mobile Number
+
+function telValidation()
+{
+    document.getElementById('mobnumval').innerText = "";
+    re = /^[6-9]{1}[0-9]{9}$/;
+    if(!(re.test(telnumber.value)))
+    {
+        document.getElementById('mobnumval').innerText = " Invalid Mobile number";
+    }
+    else
+    {
+        document.getElementById('mobnumval').innerText = "";
+        document.getElementById('modelmobileNumber').innerText = "Mobile Number : " + telnumber.value;
+        telnumberB = true;
+        return true;
+    }
+}
+
+//Email validation
+
+function emailValidation()
+{
+    document.getElementById('emailval').innerText = "";
+    var re = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if(!(re.test(email.value)))
+    {
+        document.getElementById('emailval').innerText = "Invalid email address";
+    }
+    else
+    {
+        document.getElementById('emailval').innerText = "";
+       document.getElementById('modelEmail').innerText ="Email Id : " +  email.value;
+        emailB = true;
+        return true;
+    }
+
+}
+
+//address count
+
+function addressCount()
+{
+    document.getElementById('addressval').innerText = "";
+    if((address.value.length) < 150)
+    {
+        document.getElementById('addcount').style.color = "white";
+        document.getElementById('addcount').innerText = address.value.length+"/150";
+    }
+    else
+    {
+        document.getElementById('addcount').style.color = "red";
+        document.getElementById('addcount').innerText = address.value.length+"/150";
+    }
+}
+
+//date validation 
+
+function dobValidation()
+{
+    document.getElementById('dobval').innerHTML = "";
+    var today = new Date();
+        var currentYear = today.getFullYear();
+        var currentMonth = today.getMonth();
+        var currentDay = today.getDate();
+
+    var birth = new Date(dob.value);
+        var birthYear = birth.getFullYear();
+        var birthMonth = birth.getMonth();
+        var birthDay = birth.getDate();
+
+        var age = currentYear - birthYear;
+        var ageMonth = currentMonth - birthMonth;
+        var ageDay  = currentDay - birthDay;
+
+        if (ageMonth < 0 || (ageMonth == 0 && ageDay < 0))
+         {
+            age = parseInt(age) - 1;
+
+
+         }
+        if ((age == 18 && ageMonth <= 0 && ageDay <= 0) || age < 18)
+         {
+            document.getElementById('dobval').innerHTML = "Age should be more than 18 years";
+            return false;
+         }
+         else
+         {
+            document.getElementById('dobval').innerHTML = "";
+            document.getElementById('modelDOB').innerHTML ="Age : " +  age;
+            dobB = true;
+            return true;
+         }
+}
+
+
+
+
+
+
+// Get the modal
+var modal = document.getElementById('displayModal');
+
+
+// Get the button that opens the modal
+var btn = document.getElementById("regButton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event)
+ {
+    if (event.target == modal) 
+    {
+        modal.style.display = "none";
+    }
+}
+
+
+
+    
+    
+
+//clear form
+function clearForm()
+{
+    //localStorage.removeItem("usernamedata");
+   // localStorage.removeItem("pw");
+  //  localStorage.removeItem("clickcount");
+    dataCheck = false;
+     if(typeof(Storage) !== "undefined") 
+     {
+        if (localStorage.clickcount) 
+        {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } 
+        else 
+        {
+            localStorage.clickcount = 1;
+        }
+
+        if(localStorage.clickcount == 1)
+        {
+            // Name and Password from the register-form
+            var usernamedata = [];
+            var pw = [];
+            usernamedata[localStorage.clickcount] = email.value;
+            pw[localStorage.clickcount] = password.value;
+           localStorage.setItem("usernamedata",JSON.stringify(usernamedata));
+           localStorage.setItem("pw",JSON.stringify(pw));
+           dataCheck = true;
+        }
+        else
+        {
+            var usernamedata =  JSON.parse(localStorage.getItem("usernamedata"));
+            var pw = JSON.parse(localStorage.getItem("pw"));
+            usernamedata[localStorage.clickcount] = email.value;
+            pw[localStorage.clickcount] = password.value;
+            localStorage.setItem("usernamedata",JSON.stringify(usernamedata));
+           localStorage.setItem("pw",JSON.stringify(pw));
+           dataCheck = true;
+
+        }
+        if(dataCheck == false)
+        {
+            localStorage.clickcount = Number(localStorage.clickcount) - 1;
+        }
+        var frm = document.getElementById('frm2');
+     modal.style.display = "none";
+     document.getElementById("regButton").disabled = true; 
+       
+     /* var namel = localStorage.setItem("username",usernamedata);
+        var pwl = localStorage.setItem("pw",pw);
+   var frm = document.getElementById('frm2');
+   var namel = localStorage.getItem("username");
+   var pwl = localStorage.getItem("pw");
+   modal.style.display = "none";
+   document.getElementById("regButton").disabled = true; 
+    // storing input from register-form
+    if(namel.length == 0 && pw.length == 0)
+    {
+        localStorage.setItem("isdata",0);
+        var si = parseInt(localStorage.getItem("isdata"));
+        
+    }
+    else
+    {
+        var si = parseInt(localStorage.getItem("isdata"));
+    }
+        
+    usernamedata[si] = email.value;
+        pw[si] = password.value;
+        localStorage.setItem('name', JSON.stringify(usernamedata));
+        localStorage.setItem('pw', JSON.stringify(pw));
+        localStorage.setItem("isdata",si++); */
+     frm.reset();
+   alert("Succesfully registered");
+}
+}
+
+
+        </script>
+</body>
+
+</html>
